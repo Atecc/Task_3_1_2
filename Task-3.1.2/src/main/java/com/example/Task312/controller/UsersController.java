@@ -40,7 +40,7 @@ public class UsersController {
     @PostMapping()
     public String createUser(@ModelAttribute("user") User user) {
         userService.save(user);
-        return "redirect:http://localhost:8080/";
+        return "redirect:/";
     }
 
     @GetMapping("/edit")
@@ -54,12 +54,12 @@ public class UsersController {
     public String updateUser(@ModelAttribute("user") User user,
                              @RequestParam("id") int id) {
         userService.update(id, user);
-        return "redirect:http://localhost:8080/";
+        return "redirect:/";
     }
 
     @GetMapping("/delete")
     public String deleteUser(@RequestParam(value = "id") int id) {
         userService.delete(id);
-        return "redirect:http://localhost:8080/";
+        return "redirect:/";
     }
 }
